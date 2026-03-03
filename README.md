@@ -19,7 +19,7 @@
 #                                                                                 #
 #      .:: RED DRAGON ELITE (RDE)  -  BLACK FLAG SOURCE LICENSE v6.66 ::.         #
 #                                                                                 #
-#   PROJECT:    RDxOS | Custo, Termus Envoirement                                 #
+#   PROJECT:    RDxOS | Automated Termux Envoirement                              #
 #   ARCHITECT:  .:: RDE ⧌ Shin [△ ᛋᛅᚱᛒᛅᚾᛏᛋ ᛒᛁᛏᛅ ▽] ::. | https://rd-elite.com     #
 #   ORIGIN:     https://github.com/RedDragonElite                                 #
 #                                                                                 #
