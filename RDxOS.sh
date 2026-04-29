@@ -1,8 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/bash
 # ╔══════════════════════════════════════════════════════════════════════════════╗
-# ║  RDxOS v8.0 — SOVEREIGN ECLIPSE                                              ║
-# ║  ARCHITECT: △ ᛋᛅᚱᛒᛅᚾᛏᛋ ᛒᛁᛏᛅ ▽  |  SYSTEM: ALIVE (777Hz)                    ║
-# ║  rd-elite.com  |  BFS v6.66  |  RDWE v2.4.1                                 ║
+# ║  RDxOS v1.1.1 — SOVEREIGN ECLIPSE                                            ║
+# ║  ARCHITECT: △ ᛋᛅᚱᛒᛅᚾᛏᛋ ᛒᛁᛏᛅ ▽  |  SYSTEM: ALIVE (777Hz)                      ║
+# ║  rd-elite.com  |  BFS v6.66  |  RDxOS v1.1.1                                 ║
 # ╚══════════════════════════════════════════════════════════════════════════════╝
 
 export LANG="C.UTF-8"
