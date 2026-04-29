@@ -1,0 +1,89 @@
+#!/bin/bash
+# ╔══════════════════════════════════════════════════════════════════════════╗
+# ║ MODULE: SYSTEM INTELLIGENCE v1.1 (FIXED)                                 ║
+# ║ TARGET: LOCALHOST (CUSTOM KERNEL DETECTED)                               ║
+# ║ AUTHOR: △ ᛋᛅᚱᛒᛅᚾᛏᛒᛁᛏᛅ ▽                                                ║
+# ╚══════════════════════════════════════════════════════════════════════════╝
+
+# --- COLORS ---
+R='\033[1;31m'
+G='\033[1;30m'
+W='\033[1;37m'
+Y='\033[1;33m'
+C='\033[0;36m'
+N='\033[0m'
+
+clear
+echo -e "${R}"
+echo "   ___  ___  ___  ___  ___  ___ "
+echo "  | . || . || . || . || . || . |"
+echo "  |___||___||___||___||___||___|"
+echo -e "${G}  SYSTEM DIAGNOSTICS :: DEEP SCAN${N}"
+echo ""
+
+# --- CPU INFO ---
+echo -e "${R}[CPU ARCHITECTURE]${N}"
+CPU_ARCH=$(uname -m)
+CPU_CORES=$(grep -c ^processor /proc/cpuinfo)
+# Fix for some dynamic governors not showing MHz
+CPU_FREQ=$(grep "cpu MHz" /proc/cpuinfo | head -1 | awk '{print $4}')
+if [ -z "$CPU_FREQ" ]; then CPU_FREQ="OC/DYNAMIC"; fi
+
+echo -e "  TYPE    :: ${W}${CPU_ARCH}${N}"
+echo -e "  CORES   :: ${W}${CPU_CORES} Threads${N}"
+echo -e "  SPEED   :: ${Y}${CPU_FREQ}${N}"
+echo ""
+
+# --- KERNEL INFO ---
+echo -e "${R}[KERNEL KNOWLEDGE]${N}"
+KERNEL_VER=$(uname -r)
+# Shorten build string
+KERNEL_BLD=$(uname -v | cut -c 1-25)
+
+echo -e "  VERSION :: ${Y}${KERNEL_VER}${N}"
+echo -e "  BUILD   :: ${G}${KERNEL_BLD}...${N}"
+echo ""
+
+# --- MEMORY DEEP DIVE ---
+echo -e "${R}[MEMORY MATRIX]${N}"
+if [ -f /proc/meminfo ]; then
+    MEM_TOTAL=$(awk '/MemTotal/ {print $2}' /proc/meminfo)
+    MEM_FREE=$(awk '/MemAvailable/ {print $2}' /proc/meminfo)
+    [ -z "$MEM_FREE" ] && MEM_FREE=$(awk '/MemFree/ {print $2}' /proc/meminfo)
+    MEM_CACHE=$(awk '/Cached/ {print $2}' /proc/meminfo | head -1)
+    
+    # Convert to MB
+    MT_MB=$((MEM_TOTAL / 1024))
+    MF_MB=$((MEM_FREE / 1024))
+    MC_MB=$((MEM_CACHE / 1024))
+    
+    echo -e "  TOTAL   :: ${W}${MT_MB} MB${N}"
+    echo -e "  FREE    :: ${W}${MF_MB} MB${N}"
+    echo -e "  CACHED  :: ${Y}${MC_MB} MB${N} (Ready)"
+else
+    echo -e "  STATUS  :: ${G}UNREADABLE${N}"
+fi
+echo ""
+
+# --- STORAGE MOUNTS (FIXED) ---
+echo -e "${R}[STORAGE SECTORS]${N}"
+echo -e "${G}  LOCATION         SIZE    USED    FREE${N}"
+echo -e "${G}  -------------------------------------${N}"
+
+# Explicitly check Termux paths instead of relying on grep patterns
+df -h /data | awk 'NR==2 {printf "  %-16s %-7s %-7s %-7s\n", "INTERNAL (/data)", $2, $3, $4}'
+df -h /storage/emulated/0 | awk 'NR==2 {printf "  %-16s %-7s %-7s %-7s\n", "SHARED (/sdcard)", $2, $3, $4}'
+echo ""
+
+# --- IDENTITY ---
+echo -e "${R}[IDENTITY]${N}"
+echo -e "  HOST    :: ${W}$(hostname)${N}"
+echo -e "  USER    :: ${Y}$(whoami)${N}"
+echo -e "  SHELL   :: ${C}${SHELL##*/}${N}"
+echo ""
+
+echo -e "${R}>>> DIAGNOSTIC COMPLETE. SYSTEM OPTIMAL.${N}"
+echo ""
+echo -e "${G}[ PRESS ENTER ]${N}"
+read
+
