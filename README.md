@@ -11,6 +11,13 @@
 
 # RDxOS v1.1.1 — LEVIATHAN
 
+[![Version](https://img.shields.io/badge/version-1.1.1-red?style=for-the-badge&logo=github)](https://github.com/RedDragonElite/RDxOS)
+[![License](https://img.shields.io/badge/license-RDE%20BLACK%20FLAG%20v6.66-black?style=for-the-badge)](https://github.com/RedDragonElite/RDxOS)
+[![Termux](https://img.shields.io/badge/Termux-Compatible-brightgreen?style=for-the-badge)](https://termux.dev)
+[![Nostr](https://img.shields.io/badge/Nostr-Enabled-purple?style=for-the-badge)](https://primal.net/p/nprofile1qqsv8km2w8yr0sp7mtk3t44qfw7wmvh8caqpnrd7z6ll6mn9ts03teg9ha4rl)
+[![Decentralized](https://img.shields.io/badge/Decentralized-Yes-cyan?style=for-the-badge)](https://rd-elite.com)
+[![Free](https://img.shields.io/badge/price-FREE%20FOREVER-brightgreen?style=for-the-badge)](https://github.com/RedDragonElite/RDxOS)
+
 > A modular, terminal-native operating environment for Termux on Android.  
 > Self-contained. Extensible. Built for operators.
 
