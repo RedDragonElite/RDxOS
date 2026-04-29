@@ -1,0 +1,21 @@
+TARGET PROFILE
+IP: 185.162.248.118
+ISP: netcup GmbH
+LOC: Nuremberg, Germany
+--------------------------------
+PORT: 21/tcp (  ftp FileZilla ftpd 1.10.5)
+PORT: 25/tcp (  smtp?)
+PORT: 53/tcp (  domain Unbound)
+PORT: 80/tcp (  http Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP))
+PORT: 110/tcp (  pop3 hMailServer pop3d)
+PORT: 143/tcp (  imap hMailServer imapd)
+PORT: 443/tcp (  https?)
+PORT: 587/tcp (  submission?)
+PORT: 3306/tcp (  mysql MariaDB 10.3.23 or earlier (unauthorized))
+MX: 10 mail.rd-elite.com.
+NS: third-dns.netcup.net.
+NS: second-dns.netcup.net.
+NS: root-dns.netcup.net.
+TXT: "v=spf1 mx a include:_spf.webhosting.systems ~all"
+EMAIL: Abuse
+EMAIL: AR50416-RIPE
