@@ -36,7 +36,7 @@ IP_CACHE="$HOME/.rdx_ip_cache"
 HUD_STATE="$HOME/.rdx_hud_state"
 AUTOSTART="$HOME/.rdx_autostart"
 GLOBAL_TARGET="127.0.0.1"
-RDOS_VERSION="8.0"
+RDOS_VERSION="1.1.1"
 CODENAME="SOVEREIGN ECLIPSE"
 
 # Create dirs
